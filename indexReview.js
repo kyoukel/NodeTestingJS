@@ -40,4 +40,32 @@ function assert(expected, actual, message) {
 }
 
 assert(40, multiply(5, 100), "yay multiply!");
+
+//=================//SAT 02.24.18==================//
+
+var whtevs = "a"
+console.log(whtevs === "b")
+
+module.exports = {
+    assert: function(expected, actual, message = "Test") {
+        if (expected === actual) {
+            console.log( 'thumbs up' + message)
+        } else {
+            diff = util.inspect(expected) + "\n   " + util.inspect(actual);
+            console.log('poop' + message + "\n   Assertion failed no match\n   " + diff);
+        }
+    },
+
+    assert_true: function(actual, message) {
+        this.assert(true, actual, message)
+    },
+
+    assert_false: function(actual, message) {
+        this.assert(false, actual, message)
+    },
+
+};
+
+
+
     
